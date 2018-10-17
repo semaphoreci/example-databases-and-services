@@ -18,3 +18,12 @@ blocks:
           - sudo apt-get install -y -qq mysql-client
           - mysql --host=0.0.0.0 -uroot -e "create database fooo"
           - mysql --host=0.0.0.0 -uroot -e "show databases" | grep fooo
+      - name: PostgreSQL
+        commands:
+          - sem-service start postgres
+      - name: Redis
+        commands:
+          - sem-service start redis
+      - name: Memcached
+        commands:
+          - sem-service start memcached
